@@ -1,0 +1,936 @@
+*{
+    margin-top: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+header{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    position: fixed;   
+    display: block;
+}
+header.navbar{
+    padding: 0px 0px;
+}
+body{
+    background:rgb(255, 255, 255);
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    font-family: sans-serif;
+    position: relative;
+}
+
+.nav-head{
+    background-color:#00adb3e7;
+    height: 10vh;
+    width: 100%;
+    text-align: left;
+    z-index: 1;
+    display: block;
+    margin-top: 0px;
+}
+.logo{
+    display: inline-block;
+    margin: 0px;
+    overflow: hidden;
+    width: auto;
+    background: rgba(255, 255, 255, 0.733);
+    height: 10vh;
+    overflow: hidden;
+    float: left;
+}
+.user{
+    margin: 5px;
+    overflow: hidden;
+    width: auto;
+    height: auto;
+    display: inline-block;
+    float: right;
+    cursor:pointer;
+    transition: transform 0.4s ease-in;
+}
+.logo img{
+    width: 10vh;
+    height: 10vh;
+}
+.user img{
+    width: auto;
+    height: 7vh;
+}
+
+header .navbar{ 
+  overflow: hidden;
+  position: relative;
+  margin-left:8%;
+  display: inline-block;
+  align-items: right;
+  margin-top:0px;  
+  border-radius:1px;
+}
+
+header ul{
+    list-style: none;
+    display: flex;
+    font-size: 17px;
+    text-align: right;
+    font-family:  sans-serif;
+}
+header ul li{
+    border-radius: 0px;
+    padding:5px 0px;
+    background-color:#12343b00 ;
+    cursor: pointer;
+    transition: background-color 1s;
+
+}
+header ul li a{
+    margin:0px 5px;
+    text-decoration: none;
+    color:#ffff;
+    text-transform: capitalize;
+    font-weight: 200px;    
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px  #000;
+}
+header ul li a:hover{
+    color:#fff;
+    text-decoration: none;
+    text-shadow:none;
+}
+
+header ul li:hover{
+    background-color: #325536;
+}
+header .icon div{
+    background-color: #fff;
+    width: 15px;
+    height: 2px;
+    padding:1.5px 10px;
+    margin: 4px;
+    border-radius: 2px;
+    transition: transform 0.2s ease-in;
+}
+header .icon{
+    display: none;
+    margin: 30px 10px;
+}
+
+@media only screen and (max-width:1250px){
+   
+    header .navbar{ 
+        margin-left:1%;
+    }
+       
+}
+@media only screen and (max-width:860px){
+  
+    .nav-head{
+        display: flex;
+        flex-direction:row;
+        z-index: 2;
+    }
+    .logo{
+        height:10vh;
+    }
+    .user{
+        height: 9vh;
+        width:auto;
+        margin: 10px auto;
+    }
+ 
+    header .icon{        
+        top:-8px;
+        display: inline-block;
+        cursor:pointer;
+        position: absolute;
+        right: 5%;
+    }
+  
+    .user img{
+        height:6vh;
+    }
+    .user {
+            height:6vh;
+            margin-right:15vh;
+            width: 7vh;
+    }
+    header .navbar{ 
+        position: absolute;
+        right: 0px;
+        height: auto;
+        top:10vh;
+        width:50%;
+        background-color: rgba(0, 0, 0, 0.719);
+        transform: translateX(100%);
+        overflow-x: hidden;
+        transition: transform 0.4s ease-in;
+    }
+    header ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    header ul li{
+        margin:15px 18px;
+        padding:5px 12px;
+        border:none;
+    }
+    header ul li:hover{
+        background-color: rgba(0, 0, 0, 0.705);
+        border-radius: 3px;
+    }
+    header ul li a{
+        font-weight: normal;
+    }
+    header ul li a:hover{
+        font-size: 19px;
+    }
+
+}
+@media screen and (max-width:720px){
+   
+    .logo{
+        height:10vh;
+    }
+     .user{
+            height: 10vh;
+            margin: 10px auto;
+   }    
+    .user img{
+            height:6vh;
+     }
+    .user {
+            height:6vh;
+            margin-right:15vh;
+            width: 7vh;
+            /* border: 1px solid red; */
+    }
+    #menu{
+            margin-left: 5px;
+        }
+
+}
+
+header .navactive{ 
+    transform: translateX(0%);
+}
+header .toggle .line1{
+    transform: rotate(45deg) translate(6px, 6px);
+}
+header .toggle .line2{
+    display: none;
+}
+header .toggle .line3{
+    transform: rotate(-45deg) translate(-0px, 0px);
+}
+
+ /* rotating user icon */
+ .rotate_user{
+    transform:rotate3d(0, 1, 0, 180deg);
+}
+
+ /* navigation end____________________*/
+ .loginForm{
+    width:100%;
+    height: 100%;
+    display:none; 
+    position: fixed;;
+    text-align: right;
+    z-index: 2; 
+    background-color:rgba(0, 0, 0, 0.63);
+    overflow-y: hidden;
+ }
+ .formWrapper{
+    display: inline-block;
+    margin:2% 5px;
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+.loginForm form{
+    margin:0px 10px;
+    padding: 10px 5px;
+    width: fit-content;
+    border-radius: 5px;
+    background-color:#22d2d8;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+
+.loginForm .formWrapper form a:first-child{
+    color:#fff;
+    background-color: rgb(159, 54, 168);
+ 
+}
+.loginForm .formWrapper form  a:first-child:hover{
+    text-shadow: 2px 2px 3px #fe0202;
+}
+
+.loginForm .formWrapper form a{
+    color:#fff;
+    background-color: rgb(102, 49, 170);
+    font-size:16px;
+    text-align: center;
+    width: 200px;
+    border-radius: 2px;
+    margin:10px 5px;
+    padding: 5px;
+    text-transform:capitalize;
+    text-decoration: none;
+}
+
+/* Top header _____________END */
+
+/* Top banner  ---------------------- start */
+
+body .banner-head{
+    text-align: center;
+    font-family:   'Lobster', cursive;
+}
+
+.bd-example img{
+    height: 400px;
+}
+.bd-example .bannerText{
+    width: 100%;
+    background: rgba(43, 37, 37, 0.527);
+    position: absolute;
+    top: 60%;
+    color: rgb(230, 240, 230);
+    text-align: center;
+}
+.bd-example .bannerText h3{
+    font-size: 50px;
+    font-family: 'Kaushan Script', cursive;
+}
+
+/* Top banner -------------------------END */
+/* company detail after banner start */
+div.introHeadWrapper{
+    margin: 5% 0% auto auto;
+    padding: 0 10vh;
+
+}
+.introHeadWrapper .row .col-md-3{
+    max-height: 250px;
+    overflow: hidden;
+}
+.introHeadWrapper .row .col-md-3 img{
+    max-height: 230px;
+    border-radius: 2px;
+    margin: auto 0px;
+    margin-bottom: 10px;
+}
+.introHeadWrapper .row .intro h3{
+    color: rgb(34, 74, 119);
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-family: 'Calistoga', cursive;
+
+}
+.introHeadWrapper .row .intro{
+    height: 230px;
+    overflow: hidden !important;
+    padding: 0px 30px;
+    background-color: #fff;
+    box-shadow: 1px 1px 5px #000;
+}
+.introHeadWrapper .row .intro p{
+ display: inline-block;
+ text-align: justify;
+ text-justify: inter-word;
+}
+.introHeadWrapper .row .intro p::first-letter{
+ color: rgb(9, 126, 44);
+ font-size: 30px;
+ font-weight: bold;
+ text-transform: capitalize;
+}
+.introHeadWrapper .row .HeadFacility h3{
+    color: rgb(34, 74, 119);
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-family: 'Calistoga', cursive;
+}
+.introHeadWrapper .row .HeadFacility {
+   margin: 5px;
+}
+.introHeadWrapper .row .HeadFacility ul{
+    list-style: none;
+}
+.introHeadWrapper .row .HeadFacility li{
+    text-align: -webkit-match-parent;
+    margin: 5px auto;
+}
+.introHeadWrapper .row .HeadFacility li::before{
+    content: '✓';
+    font-weight: bold;
+    margin: 0 5px;
+    background-color: #3cc54c;
+    padding: 3px;
+    border-radius: 2px;
+    color: #fff;
+}
+/* company detail after banner end */
+
+
+
+.bookCard{
+    background: rgb(239, 239, 241);
+    border: 1px solid;
+    width: 320px;
+    margin: 15px;
+    padding-bottom:10px ;
+    border: none;
+    display: inline-block;
+
+}
+.bookCard img{
+    background-color: rgba(32, 31, 31, 0.623);
+    height: 200px;
+    width: 319px;
+    border-radius: 2px;
+    box-shadow: 1px 2px 5px rgba(10, 11, 17, 0.692);
+}
+.bookingWrapper{
+    margin-left:  8%;
+    margin-right:  8%;
+    height: auto;
+    margin-top: 5%;
+    width: 100%;
+    display: inline-block;
+    }
+    
+.bookingWrapper h2{
+        text-align: center;
+        width: 100%;
+        letter-spacing: 1vh;
+        font-family: 'Kaushan Script';
+        font-size: 62px;
+        background: -webkit-linear-gradient(rgb(28, 130, 177), rgb(38, 197, 78));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+.bookingWrapper .bookCard .cardWrapper h4{
+        margin: 5px;
+        text-align: center;
+        text-transform: capitalize;
+        font-family: 'Tomorrow', sans-serif;
+        font-weight: bold;
+        
+    }
+
+.bookCard .cardWrapper p{
+        color: rgb(46, 41, 36);
+}
+
+.bookCard .cardWrapper p span{
+    color: rgb(30, 107, 110);
+    font-size: 18px;
+}
+
+
+    
+.bookCard .cardWrapper .booknow{
+        background-color: #3cc54c;
+        transition: background-color 1s;
+        float: left;
+        border: 1px solid #3cc54c;
+    }
+    
+.bookCard .cardWrapper .booknow:hover{
+        background-color: rgba(203, 221, 205, 0.205);
+        border: 1px solid #3cc54c;
+        color: #000;
+    }
+ .bookCard .cardWrapper .viewdetail{
+    border: 1px solid #2a83b6;
+    background-color: rgba(222, 230, 236, 0.205);
+        transition: background-color 1s;
+        float: right;
+        color: #000;
+
+    }
+    
+.bookCard .cardWrapper .viewdetail:hover{
+        background-color: rgba(204, 211, 218, 0.205);
+        border: 1px solid #003f63;
+    }
+
+.ss{
+        display: inline-block;
+}
+.ss>.card{
+    display: inline-block;
+}
+
+
+
+
+ /* detail ________________ START */
+
+
+.detail-wrapper{
+    padding: 5px;
+    display: block;
+    overflow-x: hidden;
+}
+.detail-wrapper .top-wrapper{
+    border-radius: 4px;
+    color: rgb(71, 71, 71);
+}
+
+.detail-wrapper .top-wrapper .row{
+    padding: 2px 5px;
+}
+
+.detail-wrapper .top-wrapper .flim{
+    position: relative;
+    padding: 2px 5px;
+}
+.detail-wrapper .top-wrapper .detail{
+    position: relative;
+    padding: 2px 30px;
+}
+
+
+.detail-wrapper .top-wrapper .flim img{
+    width: 600px;
+    height: 350px;
+    border-radius: 2px;
+    margin: 2px 8px;
+    border: 1px solid #777777;
+    max-height: 500px;
+}
+
+.detail-wrapper .top-wrapper .detail h1{
+    text-transform: capitalize;
+    color:#2e2e2e; 
+    width: 100%;
+    position: relative;
+    background: -webkit-linear-gradient(rgb(8, 8, 8), rgb(15, 165, 224));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.detail-wrapper .top-wrapper .detail p{
+    font-style: italic;
+    font-weight: normal;
+}
+.detail-wrapper .top-wrapper p.back-home{
+    background-image: linear-gradient(to right,  rgb(0, 119, 255),rgba(255,0,0,0));
+    margin: 5px auto auto auto;
+    padding: 3px 5px;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+}
+
+.detail-wrapper .top-wrapper p.back-home a{
+    color: #fff;
+    text-decoration: none;
+}
+.detail-wrapper .top-wrapper p.back-home a i{
+    margin: auto 10px;
+}
+
+.detail-wrapper .top-wrapper .book-now{
+    display: flex;
+    width: 100%;
+    margin: 5px 10px;    
+    flex-direction: row;
+}
+
+.detail-wrapper .top-wrapper .show-book{
+    display: inline-block;
+    margin: 4px 10px;
+}
+
+.detail-wrapper .top-wrapper .show-book a{
+    background-color: #00b4abd8;
+    border:2px solid #00aeff;
+    color: #fff;
+    border-radius: 0px;
+}
+
+.detail-wrapper .top-wrapper .show-book a:hover{
+    background-color: #00e1ff3f;
+    transition: background-color 0.5s;
+    color:#3a3a3a;
+}
+
+ /* detail ________________ EMD */
+
+
+
+/* Booking START */
+
+.bookcard-wrapper{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    margin:3% 3%;
+  }
+  
+  
+  .bookcard-wrapper .book-wrapper{
+    display: flex;
+    flex-direction: column;
+  }
+  .bookcard-wrapper .book-wrapper .button-wrapper{
+    display: inline-block;
+  }
+  
+  .bookcard-wrapper .book-wrapper .img-wrapper{
+    background-color: #3838385b;
+    border-radius: 50%;
+    margin: 10px 15px;
+    overflow: hidden;
+    min-height: 200px;
+  }
+  
+  .bookcard-wrapper .book-wrapper .desc-wrapper
+  {
+    margin: 10px 15px;
+    overflow: hidden;
+    min-height: 200px;
+  }
+  
+  .bookcard-wrapper .book-wrapper img{
+      max-height: 500px;
+      width: 600px;
+  }
+  
+  .bookcard-wrapper .book-wrapper .button-wrapper{
+    padding: 5px 10px;
+    text-align: center;
+  }
+  
+  
+  .bookcard-wrapper .book-wrapper a{
+    padding: auto 5px;
+    margin: auto 10px;
+    letter-spacing: 1px;
+    color: rgb(129, 93, 214);
+    text-transform: capitalize;
+  
+  }
+  .bookcard-wrapper .book-wrapper a:hover{
+    text-decoration: none;
+  }
+  
+  
+  
+  .bookcard-wrapper .book-wrapper .button-wrapper {
+    margin: 15px 10px; 
+  }
+  
+  
+  .bookcard-wrapper .book-wrapper .descbtn-wrapper {
+    margin: 15px 10px; 
+  }
+  .bookcard-wrapper .book-wrapper .descbtn-wrapper a{
+    padding: 8px 8px;
+    margin: auto 10px 10px 10px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    background: rgb(105, 157, 235);
+    color: #fff;
+  }
+  
+ 
+  .bookcard-wrapper .book-wrapper .descbtn-wrapper a i{
+    margin: auto 5px;
+  }
+  .bookcard-wrapper .book-wrapper .button-wrapper a i{
+    margin: auto 5px;
+  }
+  
+  
+  .bookcard-wrapper .book-wrapper .descbtn-wrapper a:hover{
+    text-decoration: none;
+  }
+  
+    
+  .bookcard-wrapper  .bio-wrapper{
+  padding: 1% 5%;
+  }
+  
+  .bookcard-wrapper  .bio-wrapper .info{
+    padding: 5px;
+    border-radius: 1px;
+    background-color: #e9ebd7;
+    box-shadow: 1px 1px 0px 2px #c4a000;
+    color: red;
+  }
+  .bookcard-wrapper  .bio-wrapper .info .date{
+    width: 100%;
+    text-align: center;
+  }
+  .bookcard-wrapper  .bio-wrapper .info .date p{
+    border: 1px solid #ffffff;
+    color: rgb(97, 97, 97);
+  }
+  
+
+  .bookcard-wrapper  .bio-wrapper   .form-wrapper
+  {
+    padding: 5px 10px;
+    border-radius: 1px;
+    background-color: rgba(216, 216, 216, 0.836);
+    height: fit-content;
+    width: fit-content;
+    display: block;
+    }
+
+  .bookcard-wrapper  .bio-wrapper form{
+  height: fit-content;
+  width: 100%;
+  }
+  
+    
+  .bookcard-wrapper  .bio-wrapper form .input{
+    margin: 10px 5px;
+    color: #272727;
+    background-color: rgba(216, 216, 216, 0.836);
+    border-radius: 1px;
+    padding: 3px;
+  }
+  .bookcard-wrapper  .bio-wrapper form .input:last-child{
+    color: #131313;
+    background-color: rgb(51, 43, 43);
+    padding: 3px;
+  }
+  
+  .bookcard-wrapper  .bio-wrapper form input{
+    padding: 3px 6px;
+    border: none;
+    border: 1px solid #eeeeee;
+    box-shadow: 0px 0px 2px #5e5d5d;
+    border-radius: 1px;
+    color: #5c5b5b;
+  }
+  .bookcard-wrapper  .bio-wrapper form label{
+    padding: 3px 5px;
+    border: none;
+    text-transform: capitalize;
+    color: #5c5b5b;
+  }
+  
+  .bookcard-wrapper .bio-wrapper form button{
+    padding: 5px 15px;
+    letter-spacing: 1px;
+    border: 2px solid rgb(19, 223, 145);
+    background: rgb(33, 189, 33);
+    color: #fff;
+    margin: 5px 10px;
+  }
+  .bookcard-wrapper .bio-wrapper button#payment-button{
+    padding: 5px 15px;
+    letter-spacing: 1px;
+    border: 2px solid rgb(19, 223, 145);
+    background: rgb(33, 189, 33);
+    margin: -60px 10px auto auto;
+    color: #fff;
+    float: right;
+  }
+  
+  /* Booking END */
+  
+
+  
+/* ABOUT/ PRIVACY /FAQ PAGE ____________ START */
+
+section#about-section{
+    padding: 10px;
+    margin: 5px;
+    display: block;
+} 
+section .about-wrapper ,section .privacy-wrapper,section .faq-wrapper {
+    border-radius: 2px;
+    padding: 5px 5%;
+    
+}
+
+.about-wrapper h2, section .privacy-wrapper h2, section .faq-wrapper h2{
+    font-weight: bold;
+    color:#757474;
+}
+
+.about-wrapper p, section .privacy-wrapper p ,section .faq-wrapper p{
+    color: rgb(83, 83, 83);
+    flex: auto;
+    letter-spacing: 1px;
+    writing-mode: horizontal-tb;
+    word-spacing: 3px;
+}
+
+section .privacy-wrapper ul li{
+    list-style: none;
+    display: table;
+}
+
+section .privacy-wrapper ul p{
+    display: table-cell;
+    flex-direction: column;  
+}
+
+section .faq-wrapper ul li{
+    list-style: none;
+    display: block;
+}
+
+section .privacy-wrapper ul p{
+    display: inline-block;
+}
+
+
+section .privacy-wrapper ul p.bullet::before{
+    content: '👇';
+    font-weight: bold;
+    background-color: #dbdedf;
+    padding: 3px;
+    border-radius: 2px;
+    margin: 0px 3px;
+    color: #fff;
+    width: fit-content;
+}
+
+section .faq-wrapper ul p.bullet::before{
+    content: '?';
+    font-weight: bold;
+    background-color: #b13b1d;
+    padding: 3px;
+    border-radius: 2px;
+    margin: 0px 3px;
+    color: #fff;
+    width: fit-content;
+}
+
+section .faq-wrapper ul p.bullet{
+font-weight: bold;
+}
+
+/* ABOUT / PRIVACY /FAQ PAGE ____________ END */  
+
+
+ /* footer ________________ START */
+
+ .footerHr{
+    height: 2px;
+    background-color: #3cc54c;
+}
+
+ footer{
+    /* background:linear-gradient(to bottom, #bfbfbf ,#a0a0a0, #747474,rgb(65, 63, 63)) */
+    background-color: rgb(187, 187, 187);
+    color: rgb(160, 160, 160);
+    padding: 5px 15px;
+    margin-top: 3%;
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+   
+  footer .row{
+  }
+  
+  footer .row .col-md-3{
+    padding: 1% 3%;
+  }
+  
+  footer .row ul li a{
+    font-size: 16px;
+    color: rgb(49, 49, 49);
+    text-transform: capitalize;
+    text-align: left;
+  }
+  
+  footer .row ul li a:hover{
+    color:rgb(0, 58, 247);
+    text-decoration: none;
+  }
+
+  footer .row ul{
+    list-style: none;
+    padding: 5px;
+    color:rgb(75, 75, 75);
+  }
+  
+  footer .row ul p{
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 1px 2px 1px rgb(255, 255, 255);
+  }
+
+  footer .row ul li{
+    margin: 5px;
+    text-align: left;
+  }
+  
+  footer .row ul li a i{
+    margin-right: 5px;
+    padding: 5px;
+  }
+
+  
+@media screen and (max-width:750px){
+    footer{
+        padding: 5px 10px;
+    }
+    
+    footer .row {
+        text-align: center;
+        display: inline-block;
+        margin: auto 2%;
+    }
+    
+    
+    footer .row .col-md-3{
+        padding: 1% 1%;
+        width: 200px;
+        float: left;
+        margin: 0px;
+        height: 200px;
+    }
+    
+    
+    footer .row ul li a{
+        font-size: 15px;
+    }
+    
+    footer .row ul{
+        padding: 4px;  
+        width: fit-content;  
+        margin: 0 auto;
+        max-width: 200px;  
+        max-width: 200px;
+ 
+    }
+    
+    footer .row ul p{
+        font-size: 19px;
+    }
+    footer .row ul li{
+        margin: 3px;
+        text-align: left;
+    }
+    footer .row ul li a i{
+        margin-right: 3px;
+        padding: 3px;
+    }
+    
+}
