@@ -1,6 +1,8 @@
 
+
 <?php include_once('common/header.php'); ?>
 <main class="l-main">
+
 <div class="content-wrapper content-wrapper--with-bg">
  <h1 class="page-title">Add new Car</h1>
  <div class="card-wrapper">
