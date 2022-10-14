@@ -1,6 +1,5 @@
 
 
-
 <?php include_once('common/header.php'); 
 
 $mysqli =  new mysqli('localhost','root','','car_rental_admin');

@@ -1,4 +1,3 @@
-
 <?php include_once('common/header.php'); ?>
 <main class="l-main">
 <div class="content-wrapper content-wrapper--with-bg">

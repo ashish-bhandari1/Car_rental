@@ -1,3 +1,4 @@
+
 <?php 
    $mysqli =  new mysqli('localhost','root','','car_rental_admin');
    if(!$mysqli){
